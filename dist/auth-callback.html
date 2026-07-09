@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" translate="no" class="notranslate">
+<html lang="de" translate="no" class="notranslate">
     <head>
         <meta charset="utf-8" />
         <meta
@@ -8,9 +8,11 @@
         />
         <meta name="theme-color" content="#000000" />
         <meta name="google" content="notranslate" />
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <link rel="manifest" href="./manifest.json" />
         <link rel="shortcut icon" href="./favicon.ico" />
-        <title>Atomic CRM</title>
+        <title>Lead Liebe Portal</title>
         <style>
             body {
                 margin: 0;
@@ -29,6 +31,12 @@
                 left: 0;
                 right: 0;
                 background-color: #fafafa;
+            }
+
+            .loader-label {
+                margin: -2rem 1rem 0;
+                color: #0a0a0a;
+                font-size: 0.95rem;
             }
 
             /* CSS Spinner from https://projects.lukehaas.me/css-loaders/ */
@@ -110,10 +118,13 @@
     </head>
 
     <body>
-        <noscript> You need to enable JavaScript to run this app. </noscript>
+        <noscript>
+            Für dieses Kundenportal muss JavaScript im Browser aktiviert sein.
+        </noscript>
         <div id="root">
             <div class="loader-container">
-                <div class="loader">Loading...</div>
+                <div class="loader">Portal wird geladen …</div>
+                <p class="loader-label">Portal wird geladen …</p>
             </div>
         </div>
     </body>
