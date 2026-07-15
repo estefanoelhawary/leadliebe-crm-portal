@@ -536,8 +536,9 @@ function baueTerminMail(termin) {
     throw new OeffentlicherFehler(409, "Der Termintitel ist ungültig.");
   }
 
+  const ZOOM_LINK = "https://videokonferenz.estefano-elhawary.com/";
   const beschreibung = sichererText(
-    termin.notes || "Termin mit Lead Liebe",
+    `${termin.notes ? termin.notes + "\n\n" : ""}Videokonferenz (Zoom): ${ZOOM_LINK}`,
     5_000,
   );
   const ics = [
@@ -571,6 +572,8 @@ function baueTerminMail(termin) {
     `DTEND;TZID=Europe/Zurich:${zurichIcsDatum(ende)}`,
     `SUMMARY:${icsText(titel)}`,
     `DESCRIPTION:${icsText(beschreibung)}`,
+    `LOCATION:${icsText(ZOOM_LINK)}`,
+    `URL:${icsText(ZOOM_LINK)}`,
     "STATUS:CONFIRMED",
     "TRANSP:OPAQUE",
     "SEQUENCE:0",
@@ -588,10 +591,13 @@ function baueTerminMail(termin) {
     `${deutschesDatum(start)}, ${deutscheZeit(start)} bis ${deutscheZeit(ende)} Uhr`,
     "Zeitzone: Europe/Zurich",
     "",
+    "Der Termin findet online per Videokonferenz statt:",
+    ZOOM_LINK,
+    "",
     "Die Kalendereinladung ist dieser E-Mail beigefügt.",
     "",
     "Freundliche Grüsse",
-    "Lead Liebe",
+    "Estefano Elhawary — Lead Liebe",
   ].join("\n");
 
   return {
