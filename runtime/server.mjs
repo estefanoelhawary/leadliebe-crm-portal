@@ -103,7 +103,7 @@ function setzeSicherheitsHeader(res) {
       "base-uri 'self'",
       // admin.estefano-elhawary.com = EE-Terminservice (öffentliche Frei/Belegt-Slots + Buchung
       // für „Termin bei Estefano buchen" im Kalender-Tab; nur freie Zeiten, keine Termindaten).
-      `connect-src 'self' ${SUPABASE_ORIGIN} ${SUPABASE_WS_ORIGIN} https://admin.estefano-elhawary.com`,
+      `connect-src 'self' ${SUPABASE_ORIGIN} ${SUPABASE_WS_ORIGIN} https://admin.estefano-elhawary.com https://leadliebe.com`,
       "font-src 'self' data:",
       "form-action 'self'",
       "frame-ancestors 'none'",
